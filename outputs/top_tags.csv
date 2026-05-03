@@ -1,0 +1,13 @@
+tag,count
+android,157
+apk,145
+reflection,42
+via-tor,31
+telephony,15
+dex,12
+contains-elf,10
+runtime-modules,8
+obfuscated,7
+mysql-communication,5
+crypto,3
+contains-pe,2

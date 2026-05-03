@@ -1,0 +1,207 @@
+{
+  "sample_count": 157,
+  "engine_scan_rows": 9564,
+  "engine_count": 66,
+  "positives_min": 15,
+  "positives_median": 19.0,
+  "positives_max": 33,
+  "detection_ratio_mean": 0.33186463261366717,
+  "detection_ratio_median": 0.3225806451612903,
+  "risk_categories": {
+    "suspicious": 156,
+    "high-confidence malicious": 1
+  },
+  "size_min_bytes": 4244,
+  "size_median_bytes": 4415354.0,
+  "size_max_bytes": 97844516,
+  "samples_with_itw_urls": 44,
+  "max_itw_urls": 5,
+  "times_submitted_median": 1.0,
+  "times_submitted_max": 16999,
+  "top_engines": [
+    {
+      "engine": "K7GW",
+      "detections": 151,
+      "samples_seen": 157,
+      "detection_rate": 0.9617834394904459
+    },
+    {
+      "engine": "McAfee",
+      "detections": 146,
+      "samples_seen": 150,
+      "detection_rate": 0.9733333333333334
+    },
+    {
+      "engine": "Avira",
+      "detections": 142,
+      "samples_seen": 157,
+      "detection_rate": 0.9044585987261147
+    },
+    {
+      "engine": "DrWeb",
+      "detections": 142,
+      "samples_seen": 157,
+      "detection_rate": 0.9044585987261147
+    },
+    {
+      "engine": "Fortinet",
+      "detections": 142,
+      "samples_seen": 157,
+      "detection_rate": 0.9044585987261147
+    },
+    {
+      "engine": "Ikarus",
+      "detections": 140,
+      "samples_seen": 143,
+      "detection_rate": 0.9790209790209791
+    },
+    {
+      "engine": "Kaspersky",
+      "detections": 140,
+      "samples_seen": 151,
+      "detection_rate": 0.9271523178807947
+    },
+    {
+      "engine": "Cynet",
+      "detections": 140,
+      "samples_seen": 155,
+      "detection_rate": 0.9032258064516129
+    },
+    {
+      "engine": "CAT-QuickHeal",
+      "detections": 139,
+      "samples_seen": 157,
+      "detection_rate": 0.8853503184713376
+    },
+    {
+      "engine": "McAfee-GW-Edition",
+      "detections": 138,
+      "samples_seen": 148,
+      "detection_rate": 0.9324324324324325
+    },
+    {
+      "engine": "AhnLab-V3",
+      "detections": 135,
+      "samples_seen": 157,
+      "detection_rate": 0.8598726114649682
+    },
+    {
+      "engine": "BitDefenderFalx",
+      "detections": 130,
+      "samples_seen": 145,
+      "detection_rate": 0.896551724137931
+    }
+  ],
+  "top_tags": [
+    {
+      "tag": "android",
+      "count": 157
+    },
+    {
+      "tag": "apk",
+      "count": 145
+    },
+    {
+      "tag": "reflection",
+      "count": 42
+    },
+    {
+      "tag": "via-tor",
+      "count": 31
+    },
+    {
+      "tag": "telephony",
+      "count": 15
+    },
+    {
+      "tag": "dex",
+      "count": 12
+    },
+    {
+      "tag": "contains-elf",
+      "count": 10
+    },
+    {
+      "tag": "runtime-modules",
+      "count": 8
+    },
+    {
+      "tag": "obfuscated",
+      "count": 7
+    },
+    {
+      "tag": "mysql-communication",
+      "count": 5
+    },
+    {
+      "tag": "crypto",
+      "count": 3
+    },
+    {
+      "tag": "contains-pe",
+      "count": 2
+    }
+  ],
+  "top_detection_terms": [
+    {
+      "term": "adware",
+      "count": 601
+    },
+    {
+      "term": "artemis",
+      "count": 281
+    },
+    {
+      "term": "riskware",
+      "count": 219
+    },
+    {
+      "term": "mobby",
+      "count": 202
+    },
+    {
+      "term": "notifyer",
+      "count": 196
+    },
+    {
+      "term": "ewind",
+      "count": 166
+    },
+    {
+      "term": "smsreg",
+      "count": 134
+    },
+    {
+      "term": "general",
+      "count": 111
+    },
+    {
+      "term": "win32",
+      "count": 110
+    },
+    {
+      "term": "hiddenad",
+      "count": 108
+    },
+    {
+      "term": "hiddenads",
+      "count": 86
+    },
+    {
+      "term": "origin",
+      "count": 78
+    },
+    {
+      "term": "potentially",
+      "count": 74
+    },
+    {
+      "term": "generisk",
+      "count": 73
+    },
+    {
+      "term": "hiddad",
+      "count": 59
+    }
+  ]
+}
