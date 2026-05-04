@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VirusTotal Android Risk Dashboard</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #1f2933;
+        --muted: #637381;
+        --line: #d8dee6;
+        --surface: #ffffff;
+        --page: #f3f6f8;
+        --accent: #2f6f5e;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--ink);
+        background: var(--page);
+      }
+
+      header {
+        background: #ffffff;
+        border-bottom: 1px solid var(--line);
+        padding: 24px clamp(18px, 4vw, 48px);
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: clamp(26px, 4vw, 42px);
+        line-height: 1.08;
+        letter-spacing: 0;
+      }
+
+      .subtitle {
+        margin: 0;
+        max-width: 920px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.45;
+      }
+
+      main {
+        padding: 24px clamp(18px, 4vw, 48px) 48px;
+      }
+
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+
+      .metric {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 16px;
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 24px;
+        margin-bottom: 4px;
+      }
+
+      .metric span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr));
+        gap: 18px;
+      }
+
+      section {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      section h2 {
+        margin: 0;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--line);
+        font-size: 17px;
+        letter-spacing: 0;
+      }
+
+      figure {
+        margin: 0;
+        padding: 14px;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        background: #ffffff;
+      }
+
+      figcaption {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      .wide {
+        grid-column: 1 / -1;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>VirusTotal Android Risk Dashboard</h1>
+      <p class="subtitle">
+        Dashboard view for the final project. The visualizations summarize the
+        Python analysis and mirror the MongoDB Charts dashboard design using
+        chart-ready collections generated in <code>outputs/mongodb_charts</code>.
+      </p>
+    </header>
+    <main>
+      <div class="metrics">
+        <div class="metric"><strong>157</strong><span>Android APK reports</span></div>
+        <div class="metric"><strong>9,564</strong><span>engine scan records</span></div>
+        <div class="metric"><strong>66</strong><span>antivirus engines</span></div>
+        <div class="metric"><strong>0.323</strong><span>median detection ratio</span></div>
+      </div>
+
+      <div class="grid">
+        <section>
+          <h2>Risk Category Distribution</h2>
+          <figure>
+            <img src="charts/risk_categories.png" alt="Risk category distribution chart">
+            <figcaption>Samples grouped by consensus risk category.</figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h2>Detection Ratio Distribution</h2>
+          <figure>
+            <img src="charts/detection_ratio_distribution.png" alt="Detection ratio distribution chart">
+            <figcaption>Histogram of positive antivirus engines divided by total engines.</figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h2>Top Antivirus Engines</h2>
+          <figure>
+            <img src="charts/top_detection_engines.png" alt="Top antivirus engines chart">
+            <figcaption>Engines ranked by number of positive detections.</figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h2>VirusTotal Tags</h2>
+          <figure>
+            <img src="charts/top_tags.png" alt="Top VirusTotal tags chart">
+            <figcaption>Most common tags found in the APK reports.</figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h2>File Size vs Detection Ratio</h2>
+          <figure>
+            <img src="charts/size_vs_detection_ratio.png" alt="File size vs detection ratio scatter plot">
+            <figcaption>Explores whether file size relates to antivirus consensus.</figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <h2>Submissions vs Detection Ratio</h2>
+          <figure>
+            <img src="charts/submissions_vs_detection_ratio.png" alt="Submissions vs detection ratio scatter plot">
+            <figcaption>Shows whether frequently submitted samples also have stronger consensus.</figcaption>
+          </figure>
+        </section>
+
+        <section class="wide">
+          <h2>Numeric Feature Correlations</h2>
+          <figure>
+            <img src="charts/numeric_feature_correlations.png" alt="Numeric feature correlation matrix">
+            <figcaption>Correlation matrix for engineered numeric features.</figcaption>
+          </figure>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

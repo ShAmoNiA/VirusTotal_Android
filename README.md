@@ -50,7 +50,21 @@ It generates:
 - `outputs/python_extended_summary.md`
 - `outputs/mongodb_charts/*.csv`
 - `outputs/mongodb_charts/*.json`
+- `outputs/dashboard.html`
 - `outputs/charts/*.png`
+
+To view the local dashboard:
+
+```powershell
+cd .\outputs
+python -m http.server 8000 --bind 127.0.0.1
+```
+
+Then open:
+
+```text
+http://127.0.0.1:8000/dashboard.html
+```
 
 ## Optional MongoDB Import
 
