@@ -10,8 +10,11 @@ How can we transform nested VirusTotal Android APK reports into an analysis-read
 
 - `src/analyze_virustotal.py`: reads `VTAndroid.zip`, normalizes the JSON reports, builds CSV tables, and generates charts.
 - `src/advanced_python_analysis.py`: adds Python feature engineering, correlations, consensus-band summaries, extra charts, and report-ready Markdown.
+- `src/prepare_mongodb_charts_data.py`: creates chart-ready datasets for MongoDB Charts / Atlas Charts.
 - `src/import_to_mongodb.py`: optional loader that imports the normalized tables into MongoDB.
 - `mongodb/queries.js`: MongoDB queries for risk distribution, top engines, tags, and high-consensus samples.
+- `mongodb/charts_pipelines.js`: MongoDB aggregation pipelines that materialize dashboard collections.
+- `mongodb/mongodb_charts_dashboard.md`: step-by-step MongoDB Charts dashboard guide.
 - `docs/final_report.md`: final written report with methodology, results, limitations, and conclusions.
 - `docs/presentation_outline.md`: short slide-by-slide structure for presenting the project.
 - `outputs/`: generated CSV summaries, metrics, and chart images.
@@ -24,6 +27,7 @@ From this folder:
 python -m pip install -r requirements.txt
 python .\src\analyze_virustotal.py
 python .\src\advanced_python_analysis.py
+python .\src\prepare_mongodb_charts_data.py
 ```
 
 The script expects the original dataset at:
@@ -44,6 +48,8 @@ It generates:
 - `outputs/consensus_band_summary.csv`
 - `outputs/numeric_feature_correlations.csv`
 - `outputs/python_extended_summary.md`
+- `outputs/mongodb_charts/*.csv`
+- `outputs/mongodb_charts/*.json`
 - `outputs/charts/*.png`
 
 ## Optional MongoDB Import
@@ -59,6 +65,18 @@ Then execute or copy the examples in:
 
 ```text
 mongodb/queries.js
+```
+
+For MongoDB visualization, follow:
+
+```text
+mongodb/mongodb_charts_dashboard.md
+```
+
+The dashboard collections can be created either by importing the Python-generated files in `outputs/mongodb_charts/` or by running the aggregation pipelines in:
+
+```text
+mongodb/charts_pipelines.js
 ```
 
 ## Main Results

@@ -27,6 +27,21 @@ def clean_records(frame: pd.DataFrame) -> list[dict]:
     return records
 
 
+def load_chart_collections(db, outputs_dir: Path) -> None:
+    chart_dir = outputs_dir / "mongodb_charts"
+    if not chart_dir.exists():
+        print("No outputs/mongodb_charts directory found. Run prepare_mongodb_charts_data.py to create it.")
+        return
+
+    for path in sorted(chart_dir.glob("chart_*.csv")):
+        collection_name = path.stem
+        records = clean_records(pd.read_csv(path))
+        db[collection_name].delete_many({})
+        if records:
+            db[collection_name].insert_many(records)
+        print(f"Loaded {len(records)} records into {collection_name}.")
+
+
 def main() -> None:
     args = parse_args()
     client = MongoClient(args.uri)
@@ -54,6 +69,15 @@ def main() -> None:
     db.vt_samples.create_index("scan_date")
     db.vt_engine_scans.create_index([("engine", 1), ("detected", 1)])
     db.vt_engine_scans.create_index("sha256")
+
+    load_chart_collections(db, args.outputs)
+
+    db.chart_risk_distribution.create_index("risk_category")
+    db.chart_top_engines.create_index("engine")
+    db.chart_tag_consensus.create_index("tag")
+    db.chart_detection_scatter.create_index("detection_ratio")
+    db.chart_detection_scatter.create_index("risk_category")
+    db.chart_detection_terms.create_index("detection_term")
 
     print(f"Loaded {len(samples)} samples and {len(scans)} engine scan rows into {args.db}.")
 

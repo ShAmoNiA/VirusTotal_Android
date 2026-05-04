@@ -1,0 +1,14 @@
+[
+  {
+    "risk_category":"suspicious",
+    "samples":156,
+    "avg_detection_ratio":0.3306,
+    "avg_size_mb":4.9381
+  },
+  {
+    "risk_category":"high-confidence malicious",
+    "samples":1,
+    "avg_detection_ratio":0.5238,
+    "avg_size_mb":2.2778
+  }
+]
